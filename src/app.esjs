@@ -1,22 +1,9 @@
-importar { Terminal } desde '@es-js/terminal'
+function calcularRM (pesoLevantado , repeticiones){
+    return pesoLevantado * (1 + repeticiones / 30);
+}   
 
-asincrono funcion inicio() {
-	Terminal.limpiar()
-
-	Terminal.escribir('Ingresa un valor:')
-
-	const resultado = esperar Terminal.leer()
-
-	Terminal.escribir({
-		Resultado: resultado,
-		Tipo: tipoDe resultado,
-	})
-
-	Terminal.escribir('Presiona ENTER para volver a iniciar')
-
-	esperar Terminal.leerEnter()
-
-	esperar inicio()
-}
-
-inicio()
+let pesoLevantado = parseFloat(prompt("¿Cuánto peso levantaste? (en kg)"));     
+let repeticiones = parseInt(prompt("¿Cuántas repeticiones hiciste? (número entero)"));
+let rm = calcularRM(pesoLevantado, repeticiones);
+console.log(`Tu RM es: ${rm} kg`); // Muestra el resultado en la consola
+console.log("¡Felicidades! Has calculado tu RM.");  
